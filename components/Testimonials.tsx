@@ -31,7 +31,7 @@ export default function Testimonials() {
         >
           <Quote size={40} className="text-gold/30" />
           <p className="text-text-muted text-lg font-playfair italic">
-            "Em breve, histórias reais de quem recuperou seu direito."
+            &ldquo;Em breve, histórias reais de quem recuperou seu direito.&rdquo;
           </p>
           <div className="w-12 h-0.5 bg-gold/30" />
           <p className="text-text-muted text-sm">Depoimentos de clientes em breve.</p>

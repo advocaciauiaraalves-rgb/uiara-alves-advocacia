@@ -38,7 +38,7 @@ export default function About() {
 
             <div className="border-l-4 border-gold bg-white rounded-r-xl px-5 py-4 shadow-sm">
               <p className="text-dark font-semibold leading-relaxed italic">
-                "Também sou paciente bariátrica — e essa vivência transforma a minha advocacia."
+                &ldquo;Também sou paciente bariátrica — e essa vivência transforma a minha advocacia.&rdquo;
               </p>
             </div>
 
