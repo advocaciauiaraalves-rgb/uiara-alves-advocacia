@@ -46,18 +46,19 @@ export default function Hero() {
             Atendimento digital em todo o Brasil.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gold text-dark px-8 py-3.5 rounded-full font-semibold text-center tracking-wide hover:bg-gold-light transition-colors"
+              className="group relative overflow-hidden border border-gold text-gold px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-center transition-all duration-300 hover:text-dark"
             >
-              Consulta pelo WhatsApp
+              <span className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" aria-hidden="true" />
+              <span className="relative">Falar com nosso time de especialistas</span>
             </a>
             <a
               href="#sobre"
-              className="border border-gold/50 text-gold px-8 py-3.5 rounded-full font-semibold text-center tracking-wide hover:border-gold hover:bg-gold/5 transition-colors"
+              className="text-warm-white/60 text-xs font-semibold uppercase tracking-[0.2em] text-center py-3.5 hover:text-gold transition-colors duration-300"
             >
               Conheça minha história
             </a>
