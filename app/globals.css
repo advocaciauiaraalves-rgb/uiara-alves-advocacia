@@ -15,4 +15,8 @@ html {
     text-align: left;
     direction: ltr;
   }
+
+  p {
+    text-align: justify;
+  }
 }
