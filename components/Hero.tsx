@@ -51,9 +51,9 @@ export default function Hero() {
         >
           <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-gold to-gold-light rounded-full" />
           <img
-            src="/uiara-photo.jpg"
+            src="/uiara-hero.jpg"
             alt="Dra. Uiara Alves, advogada especialista em planos de saúde"
-            className="w-full max-h-[520px] object-cover object-top rounded-2xl shadow-2xl ml-4"
+            className="w-full max-h-[520px] object-cover object-center rounded-2xl shadow-2xl ml-4"
           />
         </motion.div>
       </div>

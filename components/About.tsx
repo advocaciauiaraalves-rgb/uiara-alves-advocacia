@@ -18,9 +18,9 @@ export default function About() {
             className="relative"
           >
             <img
-              src="/uiara-photo.jpg"
+              src="/uiara-about.jpg"
               alt="Dra. Uiara Alves"
-              className="w-full max-h-[480px] object-cover object-top rounded-2xl shadow-lg"
+              className="w-full max-h-[480px] object-cover object-center rounded-2xl shadow-lg"
             />
             <div className="absolute -bottom-4 -right-4 bg-gold text-dark px-6 py-3 rounded-xl shadow-lg font-semibold text-sm">
               OAB/CE 22.546
