@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import Image from 'next/image'
 
 const navLinks = [
   { href: '#inicio', label: 'Início' },
@@ -27,22 +26,26 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white shadow-md'
-          : 'bg-transparent'
+        scrolled ? 'bg-white shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#inicio" aria-label="Uiara Alves Advocacia — início">
-          <Image
-            src="/logo.png"
-            alt="Uiara Alves Advocacia"
-            width={200}
-            height={48}
-            className="h-12 w-auto max-w-[200px] object-contain"
-          />
+
+        {/* Wordmark */}
+        <a href="#inicio" aria-label="Uiara Alves Advocacia — início" className="flex flex-col leading-none gap-0.5">
+          <span
+            className={`font-playfair text-lg font-bold tracking-wide transition-colors ${
+              scrolled ? 'text-dark' : 'text-warm-white'
+            }`}
+          >
+            Uiara Alves
+          </span>
+          <span className="text-gold text-[9px] font-bold uppercase tracking-[0.35em]">
+            Advocacia
+          </span>
         </a>
 
+        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6" aria-label="Navegação principal">
           {navLinks.map((link) => (
             <a
@@ -61,16 +64,13 @@ export default function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
-              scrolled
-                ? 'bg-gold text-dark hover:bg-gold-light'
-                : 'bg-gold/90 text-dark hover:bg-gold'
-            }`}
+            className="bg-gold text-dark px-5 py-2 rounded-full text-sm font-semibold hover:bg-gold-light transition-colors"
           >
             Falar no WhatsApp
           </a>
         </nav>
 
+        {/* Mobile menu button */}
         <button
           className={`md:hidden transition-colors ${
             scrolled ? 'text-dark' : 'text-warm-white'
@@ -83,12 +83,11 @@ export default function Header() {
         </button>
       </div>
 
+      {/* Mobile menu */}
       {menuOpen && (
         <div
           className={`md:hidden border-t px-6 py-5 flex flex-col gap-4 ${
-            scrolled
-              ? 'bg-white border-gray-100'
-              : 'bg-dark border-white/10'
+            scrolled ? 'bg-white border-gray-100' : 'bg-dark border-white/10'
           }`}
         >
           {navLinks.map((link) => (
