@@ -19,20 +19,28 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10)
+    const handleScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 bg-white transition-shadow duration-300 ${
-        scrolled ? 'shadow-md' : ''
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white shadow-md'
+          : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#inicio" aria-label="Uiara Alves Advocacia — início">
-          <Image src="/logo.png" alt="Uiara Alves Advocacia" width={200} height={48} className="h-12 w-auto max-w-[200px] object-contain" />
+          <Image
+            src="/logo.png"
+            alt="Uiara Alves Advocacia"
+            width={200}
+            height={48}
+            className="h-12 w-auto max-w-[200px] object-contain"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-6" aria-label="Navegação principal">
@@ -40,7 +48,11 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-dark hover:text-gold transition-colors"
+              className={`text-sm font-medium transition-colors ${
+                scrolled
+                  ? 'text-dark hover:text-gold'
+                  : 'text-warm-white/80 hover:text-gold'
+              }`}
             >
               {link.label}
             </a>
@@ -49,14 +61,20 @@ export default function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold text-dark px-5 py-2 rounded-full text-sm font-semibold hover:bg-gold-light transition-colors"
+            className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+              scrolled
+                ? 'bg-gold text-dark hover:bg-gold-light'
+                : 'bg-gold/90 text-dark hover:bg-gold'
+            }`}
           >
             Falar no WhatsApp
           </a>
         </nav>
 
         <button
-          className="md:hidden text-dark"
+          className={`md:hidden transition-colors ${
+            scrolled ? 'text-dark' : 'text-warm-white'
+          }`}
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={menuOpen}
@@ -66,12 +84,20 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-5 flex flex-col gap-4">
+        <div
+          className={`md:hidden border-t px-6 py-5 flex flex-col gap-4 ${
+            scrolled
+              ? 'bg-white border-gray-100'
+              : 'bg-dark border-white/10'
+          }`}
+        >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-base font-medium text-dark"
+              className={`text-base font-medium ${
+                scrolled ? 'text-dark' : 'text-warm-white/90'
+              }`}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

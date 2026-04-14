@@ -10,12 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         gold: {
-          DEFAULT: '#C9A84C',
-          light: '#E8C84A',
+          DEFAULT: '#C5A46D',
+          light: '#D4B884',
         },
-        dark: '#1A1A1A',
+        dark: '#1C1C1C',
         'off-white': '#F9F7F4',
+        'warm-white': '#F5F5F5',
         'text-muted': '#4A4A4A',
+        'text-muted-dark': '#BFBFBF',
       },
       fontFamily: {
         playfair: ['var(--font-rufina)', 'Georgia', 'serif'],
