@@ -17,7 +17,7 @@ export default function Footer() {
             <img
               src="/logo.png"
               alt="Uiara Alves Advocacia"
-              className="h-12 w-auto brightness-0 invert"
+              className="h-12 w-auto max-w-[200px] object-contain"
             />
             <p className="text-gray-400 text-sm">Uiara Alves Advocacia</p>
             <p className="text-gray-400 text-sm">OAB/CE 22.546</p>

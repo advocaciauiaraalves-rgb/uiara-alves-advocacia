@@ -39,8 +39,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${playfair.variable} ${inter.variable} scroll-smooth`}>
-      <body className="font-sans text-dark bg-white antialiased">{children}</body>
+    <html lang="pt-BR" dir="ltr" className={`${playfair.variable} ${inter.variable} scroll-smooth`}>
+      <body className="font-sans text-dark bg-white antialiased text-left">{children}</body>
     </html>
   )
 }
