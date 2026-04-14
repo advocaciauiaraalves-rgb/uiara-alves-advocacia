@@ -18,8 +18,8 @@ const config: Config = {
         'text-muted': '#4A4A4A',
       },
       fontFamily: {
-        playfair: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        playfair: ['var(--font-rufina)', 'Georgia', 'serif'],
+        sans: ['var(--font-nunito)', 'system-ui', 'sans-serif'],
       },
     },
   },

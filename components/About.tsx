@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
 
 export default function About() {
   const ref = useRef(null)
@@ -17,11 +18,15 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <img
-              src="/uiara-hero.jpg"
-              alt="Dra. Uiara Alves"
-              className="w-full max-h-[480px] object-cover object-center rounded-2xl shadow-lg"
-            />
+            <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
+              <Image
+                src="/uiara-hero.jpg"
+                alt="Dra. Uiara Alves"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
             <div className="absolute -bottom-4 -right-4 bg-gold text-dark px-6 py-3 rounded-xl shadow-lg font-semibold text-sm">
               OAB/CE 22.546
             </div>
@@ -36,11 +41,11 @@ export default function About() {
             <span className="text-gold text-xs font-bold uppercase tracking-widest">Sobre</span>
             <h2 className="font-playfair text-3xl md:text-4xl text-dark">Uiara Alves</h2>
 
-            <div className="border-l-4 border-gold bg-white rounded-r-xl px-5 py-4 shadow-sm">
-              <p className="text-dark font-semibold leading-relaxed italic">
+            <blockquote className="py-2">
+              <p className="font-playfair text-xl md:text-2xl text-dark/80 italic leading-snug">
                 &ldquo;Também sou paciente bariátrica — e essa vivência transforma a minha advocacia.&rdquo;
               </p>
-            </div>
+            </blockquote>
 
             <div className="flex flex-col gap-4 text-text-muted leading-relaxed">
               <p>

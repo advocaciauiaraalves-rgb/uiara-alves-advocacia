@@ -38,7 +38,7 @@ export default function HowItWorks() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="mb-14"
         >
           <span className="text-gold text-xs font-bold uppercase tracking-widest">Como Funciona</span>
           <h2 className="font-playfair text-3xl md:text-4xl text-dark mt-3">
@@ -46,23 +46,25 @@ export default function HowItWorks() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex flex-col">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative bg-white rounded-2xl p-8 flex flex-col gap-4 text-center shadow-sm"
+              className="grid md:grid-cols-[4rem_auto_1fr] gap-4 md:gap-10 py-10 border-t border-dark/10 items-center"
             >
-              <span className="absolute top-4 right-6 text-gold/20 font-playfair text-5xl font-bold select-none">
+              <span className="font-playfair text-4xl md:text-5xl font-bold text-gold/25 leading-none select-none">
                 {step.number}
               </span>
-              <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center mx-auto shadow-md">
-                <step.icon size={22} className="text-dark" />
+              <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center flex-shrink-0">
+                <step.icon size={18} className="text-gold" />
               </div>
-              <h3 className="font-playfair text-xl text-dark font-semibold mt-2">{step.title}</h3>
-              <p className="text-text-muted leading-relaxed">{step.description}</p>
+              <div className="flex flex-col gap-1">
+                <h3 className="font-playfair text-xl text-dark font-bold">{step.title}</h3>
+                <p className="text-text-muted leading-relaxed">{step.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -71,7 +73,7 @@ export default function HowItWorks() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-center mt-12"
+          className="mt-10"
         >
           <a
             href={WHATSAPP_URL}

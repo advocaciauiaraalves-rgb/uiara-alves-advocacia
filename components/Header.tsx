@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '#inicio', label: 'Início' },
@@ -31,7 +32,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
         <a href="#inicio" aria-label="Uiara Alves Advocacia — início">
-          <img src="/logo.png" alt="Uiara Alves Advocacia" className="h-12 w-auto max-w-[200px] object-contain" />
+          <Image src="/logo.png" alt="Uiara Alves Advocacia" width={200} height={48} className="h-12 w-auto max-w-[200px] object-contain" />
         </a>
 
         <nav className="hidden md:flex items-center gap-6" aria-label="Navegação principal">

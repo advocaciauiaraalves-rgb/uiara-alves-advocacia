@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const WHATSAPP_URL = 'https://wa.me/5585991516028'
 
@@ -47,14 +48,19 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative flex justify-center"
+          className="relative"
         >
-          <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-gold to-gold-light rounded-full" />
-          <img
-            src="/uiara-about.jpg"
-            alt="Dra. Uiara Alves, advogada especialista em planos de saúde"
-            className="w-full max-h-[520px] object-cover object-center rounded-2xl shadow-2xl ml-4"
-          />
+          <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-gold to-gold-light rounded-full z-10" />
+          <div className="relative ml-4 rounded-2xl overflow-hidden shadow-2xl aspect-[3/4]">
+            <Image
+              src="/uiara-about.jpg"
+              alt="Dra. Uiara Alves, advogada especialista em planos de saúde"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-center"
+            />
+          </div>
         </motion.div>
       </div>
     </section>

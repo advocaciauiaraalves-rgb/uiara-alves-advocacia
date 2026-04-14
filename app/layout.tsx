@@ -1,16 +1,19 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Rufina, Nunito_Sans } from 'next/font/google'
+import { Providers } from '@/components/Providers'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const rufina = Rufina({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  weight: ['400', '700'],
+  variable: '--font-rufina',
   display: 'swap',
 })
 
-const inter = Inter({
+const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-nunito',
   display: 'swap',
 })
 
@@ -39,8 +42,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" dir="ltr" className={`${playfair.variable} ${inter.variable} scroll-smooth`}>
-      <body className="font-sans text-dark bg-white antialiased text-left">{children}</body>
+    <html lang="pt-BR" dir="ltr" className={`${rufina.variable} ${nunitoSans.variable} scroll-smooth`}>
+      <body className="font-sans text-dark bg-white antialiased text-left">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

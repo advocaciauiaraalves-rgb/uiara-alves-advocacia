@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const navLinks = [
   { href: '#inicio', label: 'Início' },
   { href: '#sobre', label: 'Sobre' },
@@ -14,9 +16,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div className="flex flex-col gap-3">
-            <img
+            <Image
               src="/logo.png"
               alt="Uiara Alves Advocacia"
+              width={200}
+              height={48}
               className="h-12 w-auto max-w-[200px] object-contain"
             />
             <p className="text-gray-400 text-sm">Uiara Alves Advocacia</p>
