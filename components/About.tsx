@@ -18,7 +18,7 @@ export default function About() {
             className="relative"
           >
             <img
-              src="/uiara-about.jpg"
+              src="/uiara-hero.jpg"
               alt="Dra. Uiara Alves"
               className="w-full max-h-[480px] object-cover object-center rounded-2xl shadow-lg"
             />
